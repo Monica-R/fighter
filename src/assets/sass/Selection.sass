@@ -1,0 +1,75 @@
+@import 'reset.sass'
+
+.main
+    height: 90%
+    font-family: $font-title
+    .blocks
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: space-around
+        align-items: center
+        flex-wrap: wrap
+        gap: 5%
+
+    .characters
+        width: 50%
+        height: 70%
+        display: flex
+        flex-wrap: wrap
+        align-self: center
+        justify-content: space-between
+        &__h2
+            width: 100%
+            padding: 2%
+            font-size: calc(1rem + 1.2vw)
+            text-align: center
+            color: $pink-two
+            text-shadow: 0em .1em 0em $blue-two
+            margin: .5em
+    figure
+      width: 100%
+      &:active
+        outline: 4px solid yellow
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+      figcaption
+        text-align: center
+        color: $blue-one
+        padding: 1%
+
+.div-button
+    width: 100%
+    height: calc(6rem + 1vh)
+    line-height: calc(6rem + 1vh)
+    padding: 1%
+    text-align: center
+    .button-back,
+    .button-next
+        width: 100%
+        padding: 1%
+        align-self: center
+        width: calc(10% + 4vw)
+        text-align: center
+        font-family: $font-title
+        font-size: calc(.5rem + .5vw)
+        background-color: #ffd7f9
+        color: $blue-two
+        box-shadow: 0em .6em 0em $blue-two
+
+@media (max-width: 1600px)
+    .blocks
+        .characters
+            width: 70%
+
+@media (max-width: 1200px)
+    .blocks
+        .characters
+            width: 80%
+
+@media (max-width: 1000px)
+    .blocks
+        .characters
+            width: 100%

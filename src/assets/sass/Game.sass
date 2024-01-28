@@ -1,0 +1,188 @@
+@import 'reset.sass'
+
+.principal
+    height: calc(20em + 60vh)
+    display: flex
+    flex-wrap: wrap
+    gap: 10%
+    justify-content: space-around
+    align-items: flex-end
+    position: relative
+    .paint-background
+        width: 100%
+        height: 100vh
+        background-size: cover
+        background-position: center bottom
+        position: absolute
+        left: 0
+        top: 0
+    .give-up
+        width: 100%
+        height: 100vh
+        z-index: 2
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 2em
+        position: absolute
+        left: 0
+        top: 0
+        background: $blue-three
+        background: -webkit-linear-gradient(0deg, $blue-three 0%, #dd59d1 100%)
+        background: linear-gradient(0deg, $blue-three 0%, #dd59d1 100%)
+        color: $pink-two
+        font-family: $font-title
+        &__h1
+            font-size: calc(4em + 4vw)
+            text-shadow: 0em .1em 0em $blue-two
+        .give-up-buttons
+            display: flex
+            justify-content: center
+            gap: 1em
+            .again
+                border-style: none
+                font-size: calc(1em + 1vw)
+                background-color: transparent
+                align-self: center
+                width: calc(16% + 8vw)
+                padding: 1%
+                text-align: center
+                font-family: $font-title
+                background-color: #ffd7f9
+                color: $blue-two
+                box-shadow: 0em .4em 0em $blue-two
+                cursor: pointer
+    .buttons
+        width: calc(8em + 2vw)
+        height: 400px
+        position: absolute
+        left: 5%
+        top: 40%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        gap: 1em
+        border-radius: 0em 0em .4em .4em
+        button
+            width: 50%
+            background-color: $pink-two
+            border-style: none
+            padding: 8%
+            border-radius: 12em
+            box-shadow: 0em .4em 0em $blue-two
+            transition: all .35s
+            position: relative
+            &:hover
+                box-shadow: 0em .25em 0em $blue-two
+                top: .2%
+            .fist,
+            .cross,
+            .flag,
+            .wand
+                width: 100%
+
+    .players
+        width: 100%
+        display: flex
+        justify-content: space-around
+        .player__item
+            width: 30%
+            z-index: 1
+            img
+                width: 100%
+                transform: scaleX(-1)
+            .attack-animation
+                animation: attack 500ms
+            .player__item__info
+                width: 45%
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+                gap: .4em
+                padding: 4%
+                position: absolute
+                left: 0
+                top: 0
+            .player__hp
+                height: calc(2em + 1.2vh)
+                line-height: calc(2em + 1.2vh)
+                background-color: $pink-one
+                color: #eee
+                text-align: right
+                padding-right: 5%
+                clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)
+            .player__mp
+                height: calc(2em + 1.2vh)
+                line-height: calc(2em + 1.2vh)
+                background-color: $blue-two
+                color: #eee
+                text-align: right
+                padding-right: 5%
+                clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)
+
+        .computer__item
+            width: 30%
+            z-index: 1
+            img
+                width: 100%
+            .attack-animation
+                animation: computerAttack 500ms
+                animation-delay: 1s
+            .computer__item__info
+                width: 45%
+                display: flex
+                flex-direction: column
+                justify-content: space-around
+                gap: .4em
+                padding: 4%
+                position: absolute
+                right: 0
+                top: 0
+            .computer__hp
+                height: calc(2em + 1.2vh)
+                line-height: calc(2em + 1.2vh)
+                background-color: $pink-one
+                color: #eee
+                text-align: right
+                padding-right: 5%
+                clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)
+            .computer__mp
+                height: calc(2em + 1.2vh)
+                line-height: calc(2em + 1.2vh)
+                background-color: $blue-two
+                color: #eee
+                text-align: right
+                padding-right: 5%
+                clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)
+    .game-over
+        width: 100%
+        height: 100vh
+        z-index: 2
+        display: flex
+        justify-content: center
+        align-items: center
+        h2
+            font-size: calc(4em + 4vw)
+            text-shadow: 0em .1em 0em $blue-two
+            font-family: $font-title
+            color: $pink-two
+
+@keyframes attack
+    from
+        transform: translateX(0) scaleX(-1)
+    to
+        transform: translateX(40em) scaleX(-1)
+
+@keyframes computerAttack
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-40em)
+
+@media (max-width: 720px)
+    .principal
+        height: 100vh
+        .buttons
+            width: calc(2.6em + 4vw);
+            top: 10%
