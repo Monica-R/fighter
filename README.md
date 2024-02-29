@@ -1,6 +1,6 @@
 # fighter
 
-> A simple fighter game - user vs computer
+> A simple fighter game - user vs computer.
 > Link app: https://crystalfighters.netlify.app/#/
 
 ## Build Setup
